@@ -1,6 +1,18 @@
-# Assignment: Don't Be Sentimental!
+# Data Structures Assignment: Don't Be Sentimental!
 
+## Information
+This assignment was for data structures class. It required me to create my own custom string wrapper class around a cstring. This class would then be used for loading tweet data from pre-classified tweets to train a sentiment analysis algorithm.
 
+## Training & Tokenization
+For this project I had to come up with an alogithm of tokenization my algorithm was quite simple, yet effective. I simply checked each character loaded in and checked if it were a (' ','\n',',','.','?','\"', ';', ':','#') This list was tested with multiple different combinations of characters to provide the highest accuracy in testing. Whenever one of the delimiters is found, a new token is generated with the characters preceding the delimiter and the delimiter is removed. Next I use a porter2 stemmer library to stem the token. The token is assigned the sentiment value from the tweet. The token is then pushed into a vector. When pushing into the vector, if the token already exists, then the sentiment value becomes the new weighted average, and occurances is increased by 1. With this data we are able to calculate the average sentiment of a token across all occurances. We were required to use a vector implentation for this project, but I may revisit this project to optimize it using a map implementation.
+
+## Testing
+The testing phase works very similarly to the training phase, except the file does not have pre-classified sentiments. First I tokenize the tweet data, then I look up the tokens generated in the table and get the average sentiment of all the tokens found, tokens not found are ignored. If the average sentiment is above 2 then the tweet is a positive sentiment. If the average sentiment is below 2 then the tweet has a negative sentiment.
+
+## Accuracy
+Finaly we can test for accuracy by checking the generated list of sentiments for tweets to the key. The final model scored a 72.29% accuracy.
+
+# Project Instructions
 ## Introduction
 Have you ever read a tweet and thought, “Gee, what a positive outlook!” or “Wow, why so negative, friend?”  Can computers make the same determination?  They can surely try!
 
