@@ -131,7 +131,6 @@ double SentimentModel::calcAccuracy() {
             if(tmp1.getLength() > 1 && tmp2.getLength() > 1) {
                 tmp1.cut(0, 1);
                 tmp2.cut(0, 1);
-                tmp2.pop_back();
             }
             if(tmp1 == tmp2) {
                 if (sentiment2 == sentiment1) {

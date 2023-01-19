@@ -161,8 +161,8 @@ DSString DSString::operator+(char * stringIn) {
 
 void DSString::pop_back() {
     if(len < 1){
-        std::cerr << "pop_back data from string with less than 1 chars can result in unpredictable behavior so this feature is not implemented\n";
-        std::cerr << "popping from: " << data << "\n";
+//        std::cerr << "pop_back data from string with less than 1 chars can result in unpredictable behavior so this feature is not implemented\n";
+//        std::cerr << "popping from: " << data << "\n";
     }else {
         data[len - 1] = '\0';
         len--;
@@ -175,8 +175,8 @@ size_t DSString::getLength() const{
 
 void DSString::pop_front() {
     if(len <= 1){
-        std::cerr << "pop_front data from string with less than 2 chars can result in unpredictable behavior so this feature is not implemented\n";
-        std::cerr << "popping from: " << data << "\n";
+//        std::cerr << "pop_front data from string with less than 2 chars can result in unpredictable behavior so this feature is not implemented\n";
+//        std::cerr << "popping from: " << data << "\n";
     }else {
         char newData[len];
         for (size_t i = 0; i < len - 1; ++i) {
